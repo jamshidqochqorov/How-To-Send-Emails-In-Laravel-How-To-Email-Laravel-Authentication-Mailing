@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\EmailsController;
+use App\Http\Controllers\TestEntrollmentController;
 use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +28,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'private'])->name('private');
 
 //Route for mailing
-Route::get('/email',function (){
-   return new WelcomeMail();
-});
+//Route::get('/email',function (){
+//    Mail::to('jamshidqochqorov84@gmail.com')->send(new WelcomeMail());
+//   return new WelcomeMail();
+//});
+ Route::get('/email',[EmailsController::class,'email']);
+ Route::get('/send-testenrollment',[TestEntrollmentController::class,'sendTestNotification']);

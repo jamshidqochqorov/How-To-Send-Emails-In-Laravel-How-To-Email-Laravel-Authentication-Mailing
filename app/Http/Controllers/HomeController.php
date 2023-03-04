@@ -26,9 +26,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function private(){
-        if(Gate::allows('admin-only',auth()->user()))
-             return view('private');
+    public function private()
+    {
+        if(Gate::allows('admin-only',auth()->user())) return view('private');
         return abort('404','you have not Admin role');
     }
 }
