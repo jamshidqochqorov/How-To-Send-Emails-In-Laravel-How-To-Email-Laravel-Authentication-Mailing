@@ -34,3 +34,4 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'private'])->n
 //});
  Route::get('/email',[EmailsController::class,'email']);
  Route::get('/send-testenrollment',[TestEntrollmentController::class,'sendTestNotification']);
+ Route::get('/sms',[\App\Http\Controllers\SmsController::class,'index']);

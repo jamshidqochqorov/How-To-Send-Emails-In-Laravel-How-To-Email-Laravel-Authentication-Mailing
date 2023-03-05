@@ -30,7 +30,7 @@ class AttachmenMail extends Mailable
     {
         return $this->markdown('emails.attachment')
             ->subject('How to attach  images')
-            ->attach(public_path('/img/2.jpg'),[
+            ->attach(public_path('/img/1.jpg'),[
                 'as'=>'jamshid.jpg',
                 'mime'=>'application/jpg'
             ]);
